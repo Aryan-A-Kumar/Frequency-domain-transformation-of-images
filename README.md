@@ -46,8 +46,8 @@ Perform the specified transformations.
 Display the resultant image and visualize the FFT results.
 
 ## Functions Overview
-1. compute_fft(image)
-Computes the Fast Fourier Transform (FFT) of a given grayscale image.
+- compute_fft(image):
+Computes the Fast Fourier Transform (FFT) of a given grayscale image.<br/>
 
 Parameters: image (2D numpy array)
 Returns: fft_result (FFT of the image), magnitude_spectrum (magnitude of FFT), phase_spectrum (phase of FFT)
@@ -77,11 +77,11 @@ Returns: modified_image (2D numpy array)
 
 6. process_image(image_path)
 Processes the image by:
--Multiplying by (-1)^(x+y)
--Computing FFT
--Computing Complex Conjugate of FFT
--Computing iFFT
--Multiplying the real part of iFFT result by (-1)^(x+y)
+- Multiplying by (-1)^(x+y)
+- Computing FFT
+- Computing Complex Conjugate of FFT
+- Computing iFFT
+- Multiplying the real part of iFFT result by (-1)^(x+y)
 
 Parameters: image_path (string)
 
