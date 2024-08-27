@@ -60,10 +60,12 @@ Multiplies the image by $(-1)^{x+y}$ at each pixel located at (x,y).<br/>
 Processes the image by applying the transformations involving FFT and iFFT.
 
 ## Transformation Steps
+Load and Multiply Image: The image is loaded and multiplied by $(-1)^(x+y)$.
 - Compute FFT: The FFT of the modified image is computed to transform the image into the frequency domain.
 - Compute Complex Conjugate of FFT: The complex conjugate of the FFT result is calculated.
 - Compute iFFT of Complex Conjugate: The iFFT is performed on the complex conjugate to return to the spatial domain.
 - Multiply the Real Part by $(-1)^{x+y}$: The real part of the iFFT result is multiplied again by $(-1)^{x+y}$ to re-center the zero-frequency component.
+(Optional) Display the Resultant Image: The final processed image is displayed.
 
 ## Explanation of Output
 The output image will show a mirrored or flipped version of the original image due to the complex conjugation in the frequency domain and subsequent transformations. The operations illustrate the effects of manipulating the Fourier components on the spatial representation of the image.
