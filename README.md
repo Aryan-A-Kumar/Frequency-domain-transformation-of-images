@@ -65,6 +65,7 @@ Load and Multiply Image: The image is loaded and multiplied by $(-1)^(x+y)$.
 - Compute Complex Conjugate of FFT: The complex conjugate of the FFT result is calculated.
 - Compute iFFT of Complex Conjugate: The iFFT is performed on the complex conjugate to return to the spatial domain.
 - Multiply the Real Part by $(-1)^{x+y}$: The real part of the iFFT result is multiplied again by $(-1)^{x+y}$ to re-center the zero-frequency component.
+
 (Optional) Display the Resultant Image: The final processed image is displayed.
 
 ## Explanation of Output
