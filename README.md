@@ -41,9 +41,9 @@ python fft_image_processing.py
 ```
 This script will:
 
-Read the image.
-Perform the transformations.
-Display the resultant image and visualize the FFT results.
+- Read the image.
+- Perform the transformations.
+- Display the resultant image and visualize the FFT results.
 
 ## Functions Overview
 - compute_fft(image):
@@ -66,15 +66,15 @@ Processes the image by applying the transformations involving FFT and iFFT.
 
 
 ## Transformation Steps
-Load and Multiply Image: The image is loaded and multiplied by (-1)^(x+y) to shift the zero-frequency component to the center of the spectrum.<br/>
+- Load and Multiply Image: The image is loaded and multiplied by (-1)^(x+y) to shift the zero-frequency component to the center of the spectrum.<br/>
 
-Compute FFT: The FFT of the modified image is computed to transform the image into the frequency domain.<br/>
+- Compute FFT: The FFT of the modified image is computed to transform the image into the frequency domain.<br/>
 
-Compute Complex Conjugate of FFT: The complex conjugate of the FFT result is calculated.<br/>
+- Compute Complex Conjugate of FFT: The complex conjugate of the FFT result is calculated.<br/>
 
-Compute iFFT of Complex Conjugate: The iFFT is performed on the complex conjugate to return to the spatial domain.<br/>
+- Compute iFFT of Complex Conjugate: The iFFT is performed on the complex conjugate to return to the spatial domain.<br/>
 
-Multiply the Real Part by (-1)^(x+y): The real part of the iFFT result is multiplied again by (-1)^(x+y) to re-center the zero-frequency component.<br/>
+- Multiply the Real Part by (-1)^(x+y): The real part of the iFFT result is multiplied again by (-1)^(x+y) to re-center the zero-frequency component.<br/>
 
 Display the Resultant Image: The final processed image is displayed.
 
@@ -82,5 +82,5 @@ Display the Resultant Image: The final processed image is displayed.
 The output image will show a mirrored or flipped version of the original image due to the complex conjugation in the frequency domain and subsequent transformations. The operations illustrate the effects of manipulating the Fourier components on the spatial representation of the image.
 
 ## References
-Gonzalez, Woods “Digital Image Processing” 3/e, Chapter 3, Prentice Hall.<br/>
-NPTEL Lectures on Digital Image Processing by Prof. P.K. Biswas.
+- Gonzalez, Woods “Digital Image Processing” 3/e, Chapter 3, Prentice Hall.<br/>
+- NPTEL Lectures on Digital Image Processing by Prof. P.K. Biswas.
