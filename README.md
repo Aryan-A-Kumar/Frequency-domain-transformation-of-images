@@ -1,6 +1,3 @@
-Here's a README file for the provided Python code, explaining the purpose, installation, usage, and steps involved in the experiment.
-
-```markdown
 # Image Processing with FFT and iFFT
 
 This project demonstrates image processing using Fast Fourier Transform (FFT) and Inverse Fast Fourier Transform (iFFT) in Python. The code computes FFT and iFFT of an image, visualizes the magnitude and phase spectrum, and performs specific operations on an image (`dip.tiff`) using custom FFT and iFFT functions.
@@ -32,81 +29,78 @@ To run the code, you need Python 3 and the following libraries:
 
 Install the required libraries using pip:
 
-```bash
+```
 pip install numpy matplotlib pillow
 ```
-
 ## Usage
+Prepare the Image: Ensure you have an image file named dip.tiff in the working directory or provide a path to an image file.
 
-1. **Download or clone the repository**:
+Run the Python Script:
+```
+python fft_image_processing.py
+```
+This script will:
 
-   ```bash
-   git clone https://github.com/your-username/image-processing-fft.git
-   cd image-processing-fft
-   ```
-
-2. **Run the code**:
-
-   Ensure you have an image named `dip.tiff` in the same directory or provide a path to an image file in the `process_image` function.
-
-   ```python
-   python fft_image_processing.py
-   ```
+Read the image.
+Perform the specified transformations.
+Display the resultant image and visualize the FFT results.
 
 ## Functions Overview
+1. compute_fft(image)
+Computes the Fast Fourier Transform (FFT) of a given grayscale image.
 
-### 1. `compute_fft(image)`
+Parameters: image (2D numpy array)
+Returns: fft_result (FFT of the image), magnitude_spectrum (magnitude of FFT), phase_spectrum (phase of FFT)
 
-- Computes the Fast Fourier Transform (FFT) of a given image.
-- Returns the FFT result, magnitude spectrum, and phase spectrum.
+3. compute_ifft(fft_data)
+Computes the Inverse Fast Fourier Transform (iFFT) of given FFT data.
 
-### 2. `compute_ifft(fft_data)`
+Parameters: fft_data (2D numpy array)
+Returns: ifft_result (iFFT of the image)
 
-- Computes the Inverse Fast Fourier Transform (iFFT) of the given FFT data.
-- Returns the iFFT result.
+3. visualize_spectrum(magnitude_spectrum, phase_spectrum)
+Visualizes the magnitude and phase spectrum of an image.
 
-### 3. `visualize_spectrum(magnitude_spectrum, phase_spectrum)`
+Parameters: magnitude_spectrum (2D numpy array), phase_spectrum (2D numpy array)
 
-- Visualizes the magnitude and phase spectrum of an image using Matplotlib.
+5. load_image(image_path)
+Loads an image from the specified path and converts it to grayscale.
 
-### 4. `load_image(image_path)`
+Parameters: image_path (string)
+Returns: image (2D numpy array)
 
-- Loads an image from the specified path and converts it to grayscale.
+5. multiply_image_by_negative_power(image)
+Multiplies the image by (-1)^(x+y) to center the zero-frequency component.
 
-### 5. `multiply_image_by_negative_power(image)`
+Parameters: image (2D numpy array)
+Returns: modified_image (2D numpy array)
 
-- Multiplies an image by (-1)^(x+y) to shift the zero-frequency component to the center.
+6. process_image(image_path)
+Processes the image by:
+-Multiplying by (-1)^(x+y)
+-Computing FFT
+-Computing Complex Conjugate of FFT
+-Computing iFFT
+-Multiplying the real part of iFFT result by (-1)^(x+y)
 
-### 6. `process_image(image_path)`
-
-- Performs the following operations on the input image:
-  1. Multiplies the image by (-1)^(x+y).
-  2. Computes the FFT of the modified image.
-  3. Computes the complex conjugate of the FFT result.
-  4. Computes the iFFT of the complex conjugate.
-  5. Multiplies the real part of the iFFT result by (-1)^(x+y).
-- Displays the resultant image after processing.
+Parameters: image_path (string)
 
 ## Experiment Steps
+Load and Multiply Image: The image is loaded and multiplied by (-1)^(x+y) to shift the zero-frequency component to the center of the spectrum.
 
-To process the image and observe the transformations:
+Compute FFT: The FFT of the modified image is computed to transform the image into the frequency domain.
 
-1. **Multiply Image by (-1)^(x+y)**: Shifts the zero-frequency component to the center.
-2. **Compute FFT**: Transforms the image to the frequency domain.
-3. **Compute Complex Conjugate of FFT**: Reflects the frequency components.
-4. **Compute iFFT of Complex Conjugate**: Returns to the spatial domain with mirrored content.
-5. **Multiply the Real Part by (-1)^(x+y)**: Re-centers the zero-frequency component in the spatial domain.
+Compute Complex Conjugate of FFT: The complex conjugate of the FFT result is calculated.
+
+Compute iFFT of Complex Conjugate: The iFFT is performed on the complex conjugate to return to the spatial domain.
+
+Multiply the Real Part by (-1)^(x+y): The real part of the iFFT result is multiplied again by (-1)^(x+y) to re-center the zero-frequency component.
+
+Display the Resultant Image: The final processed image is displayed.
 
 ## Explanation of Output
-
-The final output image is a mirrored or flipped version of the original image due to the combination of FFT, complex conjugation, and iFFT operations. The process showcases the effect of frequency domain manipulations on spatial domain images.
+The output image will show a mirrored or flipped version of the original image due to the complex conjugation in the frequency domain and subsequent transformations. The operations illustrate the effects of manipulating the Fourier components on the spatial representation of the image.
 
 ## References
-
-1. Gonzalez, Woods “Digital Image Processing” 3/e, Chapter 3, Prentice Hall.
-2. NPTEL Lectures on Digital Image Processing by Prof. P.K. Biswas.
-```
-
-### Save the README
-
-Save the content above in a file named `README.md` in your project directory. This file provides detailed instructions and documentation for users to understand and run the code effectively.
+Gonzalez, Woods “Digital Image Processing” 3/e, Chapter 3, Prentice Hall.
+NPTEL Lectures on Digital Image Processing by Prof. P.K. Biswas.
