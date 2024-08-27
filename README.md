@@ -7,7 +7,7 @@ This project demonstrates image processing using Fast Fourier Transform (FFT) an
 2. [Installation](#installation)
 3. [Usage](#usage)
 4. [Functions Overview](#functions-overview)
-5. [Experiment Steps](#experiment-steps)
+5. [Transformation Steps](#transformation-steps)
 6. [Explanation of Output](#explanation-of-output)
 7. [References](#references)
 
