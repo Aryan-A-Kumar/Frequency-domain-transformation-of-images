@@ -58,15 +58,14 @@ Visualizes the magnitude and phase spectrum of an image.<br/>
 - load_image(image_path):
 Loads an image from the specified path and converts it to grayscale.<br/>
 
-- multiply_image_by_negative_power(image)
+- multiply_image_by_negative_power(image):
 Multiplies the image by (-1)^(x+y) at each pixel located at (x,y).<br/>
 
-6. process_image(image_path)
+- process_image(image_path):
 Processes the image by applying the transformations involving FFT and iFFT.
 
-Parameters: image_path (string)
 
-## Experiment Steps
+## Transformation Steps
 Load and Multiply Image: The image is loaded and multiplied by (-1)^(x+y) to shift the zero-frequency component to the center of the spectrum.<br/>
 
 Compute FFT: The FFT of the modified image is computed to transform the image into the frequency domain.<br/>
@@ -83,5 +82,5 @@ Display the Resultant Image: The final processed image is displayed.
 The output image will show a mirrored or flipped version of the original image due to the complex conjugation in the frequency domain and subsequent transformations. The operations illustrate the effects of manipulating the Fourier components on the spatial representation of the image.
 
 ## References
-Gonzalez, Woods “Digital Image Processing” 3/e, Chapter 3, Prentice Hall.
+Gonzalez, Woods “Digital Image Processing” 3/e, Chapter 3, Prentice Hall.<br/>
 NPTEL Lectures on Digital Image Processing by Prof. P.K. Biswas.
