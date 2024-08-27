@@ -66,7 +66,6 @@ Processes the image by applying the transformations involving FFT and iFFT.
 
 
 ## Transformation Steps
-- Load and Multiply Image: The image is loaded and multiplied by $(-1)^{x+y}$ to shift the zero-frequency component to the center of the spectrum.
 - Compute FFT: The FFT of the modified image is computed to transform the image into the frequency domain.
 - Compute Complex Conjugate of FFT: The complex conjugate of the FFT result is calculated.
 - Compute iFFT of Complex Conjugate: The iFFT is performed on the complex conjugate to return to the spatial domain.
