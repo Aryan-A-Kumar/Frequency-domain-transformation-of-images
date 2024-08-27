@@ -48,22 +48,16 @@ This script will:
 ## Functions Overview
 - compute_fft:
 Computes the Fast Fourier Transform (FFT) of a given grayscale image.<br/>
-
 - compute_ifft:
 Computes the Inverse Fast Fourier Transform (iFFT) of given FFT data.<br/>
-
 - visualize_spectrum:
 Visualizes the magnitude and phase spectrum of an image.<br/>
-
 - load_image:
 Loads an image from the specified path and converts it to grayscale.<br/>
-
 - multiply_image_by_negative_power(image):
 Multiplies the image by $(-1)^{x+y}$ at each pixel located at (x,y).<br/>
-
 - process_image:
 Processes the image by applying the transformations involving FFT and iFFT.
-
 
 ## Transformation Steps
 - Compute FFT: The FFT of the modified image is computed to transform the image into the frequency domain.
