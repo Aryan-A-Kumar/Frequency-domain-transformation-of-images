@@ -33,7 +33,7 @@ Install the required libraries using pip:
 pip install numpy matplotlib pillow
 ```
 ## Usage
-Prepare the Image: Ensure you have an image file named ```dip.tif``` or any other valid image file in the working directory or provide a path to an image file.
+Prepare the Image: Ensure you have an image file named `dip.tif` or any other valid image file in the working directory or provide a path to an image file.
 
 Run the Python Script:
 ```
