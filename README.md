@@ -42,45 +42,40 @@ python fft_image_processing.py
 This script will:
 
 Read the image.
-Perform the specified transformations.
+Perform the transformations.
 Display the resultant image and visualize the FFT results.
 
 ## Functions Overview
-- __compute_fft(image):__
+- compute_fft(image):
 Computes the Fast Fourier Transform (FFT) of a given grayscale image.<br/>
 
-#2 compute_ifft(fft_data)
-Computes the Inverse Fast Fourier Transform (iFFT) of given FFT data.
+- compute_ifft(fft_data):
+Computes the Inverse Fast Fourier Transform (iFFT) of given FFT data.<br/>
 
-3. visualize_spectrum(magnitude_spectrum, phase_spectrum)
-Visualizes the magnitude and phase spectrum of an image.
+- visualize_spectrum(magnitude_spectrum, phase_spectrum)
+Visualizes the magnitude and phase spectrum of an image.<br/>
 
-4. load_image(image_path)
-Loads an image from the specified path and converts it to grayscale.
+- load_image(image_path):
+Loads an image from the specified path and converts it to grayscale.<br/>
 
-5. multiply_image_by_negative_power(image)
-Multiplies the image by (-1)^(x+y) to center the zero-frequency component.
+- multiply_image_by_negative_power(image)
+Multiplies the image by (-1)^(x+y) at each pixel located at (x,y).<br/>
 
 6. process_image(image_path)
-Processes the image by:
-- Multiplying by (-1)^(x+y)
-- Computing FFT
-- Computing Complex Conjugate of FFT
-- Computing iFFT
-- Multiplying the real part of iFFT result by (-1)^(x+y)
+Processes the image by applying the transformations involving FFT and iFFT.
 
 Parameters: image_path (string)
 
 ## Experiment Steps
-Load and Multiply Image: The image is loaded and multiplied by (-1)^(x+y) to shift the zero-frequency component to the center of the spectrum.
+Load and Multiply Image: The image is loaded and multiplied by (-1)^(x+y) to shift the zero-frequency component to the center of the spectrum.<br/>
 
-Compute FFT: The FFT of the modified image is computed to transform the image into the frequency domain.
+Compute FFT: The FFT of the modified image is computed to transform the image into the frequency domain.<br/>
 
-Compute Complex Conjugate of FFT: The complex conjugate of the FFT result is calculated.
+Compute Complex Conjugate of FFT: The complex conjugate of the FFT result is calculated.<br/>
 
-Compute iFFT of Complex Conjugate: The iFFT is performed on the complex conjugate to return to the spatial domain.
+Compute iFFT of Complex Conjugate: The iFFT is performed on the complex conjugate to return to the spatial domain.<br/>
 
-Multiply the Real Part by (-1)^(x+y): The real part of the iFFT result is multiplied again by (-1)^(x+y) to re-center the zero-frequency component.
+Multiply the Real Part by (-1)^(x+y): The real part of the iFFT result is multiplied again by (-1)^(x+y) to re-center the zero-frequency component.<br/>
 
 Display the Resultant Image: The final processed image is displayed.
 
