@@ -46,34 +46,20 @@ Perform the specified transformations.
 Display the resultant image and visualize the FFT results.
 
 ## Functions Overview
-- compute_fft(image):
+- __compute_fft(image):__
 Computes the Fast Fourier Transform (FFT) of a given grayscale image.<br/>
 
-Parameters: image (2D numpy array)
-Returns: fft_result (FFT of the image), magnitude_spectrum (magnitude of FFT), phase_spectrum (phase of FFT)
-
-3. compute_ifft(fft_data)
+#2 compute_ifft(fft_data)
 Computes the Inverse Fast Fourier Transform (iFFT) of given FFT data.
-
-Parameters: fft_data (2D numpy array)
-Returns: ifft_result (iFFT of the image)
 
 3. visualize_spectrum(magnitude_spectrum, phase_spectrum)
 Visualizes the magnitude and phase spectrum of an image.
 
-Parameters: magnitude_spectrum (2D numpy array), phase_spectrum (2D numpy array)
-
-5. load_image(image_path)
+4. load_image(image_path)
 Loads an image from the specified path and converts it to grayscale.
-
-Parameters: image_path (string)
-Returns: image (2D numpy array)
 
 5. multiply_image_by_negative_power(image)
 Multiplies the image by (-1)^(x+y) to center the zero-frequency component.
-
-Parameters: image (2D numpy array)
-Returns: modified_image (2D numpy array)
 
 6. process_image(image_path)
 Processes the image by:
